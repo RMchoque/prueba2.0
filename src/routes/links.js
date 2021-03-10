@@ -9,14 +9,14 @@ router.get('/add', (req, res) => {
     res.render('../views/links/add.hbs')
 
 });
-router.post('/add', async (req, res) => {
-    const {title, url, description } = req.body;
+router.post('/add', async(req, res) => {
+    const {name, email } = req.body;
     const newLink = {
-        title,
-        url,
-        description
+        name,
+        email
     };
-    pool.query('INSERT INTO links SET ?',[newLink]);
+    await pool.query('INSERT INTO links SET ? ', [newLink]);
+    
     console.log(newLink);
     res.send('recibido');
 });

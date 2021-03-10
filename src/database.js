@@ -18,7 +18,7 @@ pool.getConnection((err, connection) => {
         }
     }
     if(connection) connection.release();
-    console.log('DB conecto con exito');
+    console.log('Coneccion Exitosa GG');
     return;
 });
 //convierte en promesas lo que antes eran coolbacks, 
